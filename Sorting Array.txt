@@ -1,0 +1,42 @@
+iimport java.util.Scanner;
+
+public class selectionSort {
+
+	public static void sortArray(int[] arr){
+	          int smallest;
+	          int n=arr.length;
+	          for(int i=0;i<n-1;i++){
+	              int index=i;
+	              for(int j=i+1;j<n;j++){
+	              if(arr[j]<arr[index])
+	                  index=j;
+	               smallest=arr[index];
+	               arr[index]=arr[i];
+	               arr[i]=smallest;
+	              }
+			printArray(arr);
+			}
+	}  
+	public static void printArray(int[] arr){
+		for(int i=0;i<arr.length;i++){
+			System.out.print(arr[i] + ", ");
+		}System.out.println("\n");
+		}
+	
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner s=new Scanner(System.in);
+		System.out.println("Enter no. of values to sort: ");
+		int n=s.nextInt();
+		int[] arr=new int[n];
+		for(int i=0;i<arr.length;i++){
+		System.out.printf("Enter %d value ",i);
+		arr[i]=s.nextInt();
+		}
+		System.out.println("Unsorted Array ");
+		printArray(arr);
+		System.out.println("Sorted Array ");
+		sortArray(arr);
+	}
+
+}
